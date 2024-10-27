@@ -1,0 +1,42 @@
+[
+    {
+        "prompt": "Write a function to find the longest word in a string.",
+        "solution": "fun longestWord(input: String): String {\n    return input.split(\" \").maxByOrNull { it.length } ?: \"\"\n}"
+    },
+    {
+        "prompt": "Write a function to find the shortest word in a string.",
+        "solution": "fun shortestWord(input: String): String {\n    return input.split(\" \").minByOrNull { it.length } ?: \"\"\n}"
+    },
+    {
+        "prompt": "Write a function to count the number of consonants in a string.",
+        "solution": "fun countConsonants(input: String): Int {\n    return input.count { it.isLetter() && it !in \"aeiouAEIOU\" }\n}"
+    },
+    {
+        "prompt": "Write a function to find the unique elements in an array.",
+        "solution": "fun uniqueElements(arr: IntArray): IntArray {\n    return arr.distinct().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to shuffle an array.",
+        "solution": "fun shuffleArray(arr: IntArray): IntArray {\n    return arr.toList().shuffled().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to find the most frequently occurring element in an array.",
+        "solution": "fun mostFrequentElement(arr: IntArray): Int? {\n    return arr.groupingBy { it }.eachCount().maxByOrNull { it.value }?.key\n}"
+    },
+    {
+        "prompt": "Write a function to convert an integer to a binary string.",
+        "solution": "fun intToBinaryString(n: Int): String {\n    return Integer.toBinaryString(n)\n}"
+    },
+    {
+        "prompt": "Write a function to convert a binary string to an integer.",
+        "solution": "fun binaryStringToInt(binary: String): Int {\n    return Integer.parseInt(binary, 2)\n}"
+    },
+    {
+        "prompt": "Write a function to remove all vowels from a string.",
+        "solution": "fun removeVowels(input: String): String {\n    return input.filter { it !in \"aeiouAEIOU\" }\n}"
+    },
+    {
+        "prompt": "Write a function to find the common elements between two arrays.",
+        "solution": "fun commonElements(arr1: IntArray, arr2: IntArray): IntArray {\n    return arr1.intersect(arr2.toSet()).toIntArray()\n}"
+    }
+]

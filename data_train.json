@@ -1,0 +1,162 @@
+[
+    {
+        "prompt": "Write a function that takes a string as input and returns the string reversed.",
+        "solution": "fun reverseString(input: String): String {\n    return input.reversed()\n}"
+    },
+    {
+        "prompt": "Write a function that returns the factorial of a non-negative integer.",
+        "solution": "fun factorial(n: Int): Int {\n    return if (n == 0) 1 else n * factorial(n - 1)\n}"
+    },
+    {
+        "prompt": "Write a function that returns the nth Fibonacci number.",
+        "solution": "fun fibonacci(n: Int): Int {\n    return if (n <= 1) n else fibonacci(n - 1) + fibonacci(n - 2)\n}"
+    },
+    {
+        "prompt": "Write a function to check if a given string is a palindrome.",
+        "solution": "fun isPalindrome(input: String): Boolean {\n    return input == input.reversed()\n}"
+    },
+    {
+        "prompt": "Write a function to determine if a number is prime.",
+        "solution": "fun isPrime(n: Int): Boolean {\n    if (n <= 1) return false\n    for (i in 2 until n) {\n        if (n % i == 0) return false\n    }\n    return true\n}"
+    },
+    {
+        "prompt": "Write a function that checks if two strings are anagrams of each other.",
+        "solution": "fun areAnagrams(str1: String, str2: String): Boolean {\n    return str1.toList().sorted() == str2.toList().sorted()\n}"
+    },
+    {
+        "prompt": "Write a function to find the maximum element in an array.",
+        "solution": "fun maxInArray(arr: IntArray): Int {\n    return arr.maxOrNull() ?: throw IllegalArgumentException(\"Array is empty\")\n}"
+    },
+    {
+        "prompt": "Write a function to find the minimum element in an array.",
+        "solution": "fun minInArray(arr: IntArray): Int {\n    return arr.minOrNull() ?: throw IllegalArgumentException(\"Array is empty\")\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the sum of all elements in an array.",
+        "solution": "fun sumOfArray(arr: IntArray): Int {\n    return arr.sum()\n}"
+    },
+    {
+        "prompt": "Write a function that counts the number of vowels in a string.",
+        "solution": "fun countVowels(input: String): Int {\n    return input.count { it in \"aeiouAEIOU\" }\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is even.",
+        "solution": "fun isEven(n: Int): Boolean {\n    return n % 2 == 0\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is odd.",
+        "solution": "fun isOdd(n: Int): Boolean {\n    return n % 2 != 0\n}"
+    },
+    {
+        "prompt": "Write a function to find the GCD of two numbers.",
+        "solution": "fun gcd(a: Int, b: Int): Int {\n    return if (b == 0) a else gcd(b, a % b)\n}"
+    },
+    {
+        "prompt": "Write a function to convert Celsius to Fahrenheit.",
+        "solution": "fun celsiusToFahrenheit(celsius: Double): Double {\n    return (celsius * 9/5) + 32\n}"
+    },
+    {
+        "prompt": "Write a function to convert Fahrenheit to Celsius.",
+        "solution": "fun fahrenheitToCelsius(fahrenheit: Double): Double {\n    return (fahrenheit - 32) * 5/9\n}"
+    },
+    {
+        "prompt": "Write a function that returns the square of a number.",
+        "solution": "fun square(n: Int): Int {\n    return n * n\n}"
+    },
+    {
+        "prompt": "Write a function that returns the cube of a number.",
+        "solution": "fun cube(n: Int): Int {\n    return n * n * n\n}"
+    },
+    {
+        "prompt": "Write a function to reverse an integer.",
+        "solution": "fun reverseInt(n: Int): Int {\n    return n.toString().reversed().toInt()\n}"
+    },
+    {
+        "prompt": "Write a function to find the length of a string.",
+        "solution": "fun lengthOfString(input: String): Int {\n    return input.length\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string contains only digits.",
+        "solution": "fun isNumeric(input: String): Boolean {\n    return input.all { it.isDigit() }\n}"
+    },
+    {
+        "prompt": "Write a function to count the number of words in a string.",
+        "solution": "fun countWords(input: String): Int {\n    return input.split(\" \").size\n}"
+    },
+    {
+        "prompt": "Write a function that removes whitespace from a string.",
+        "solution": "fun removeWhitespace(input: String): String {\n    return input.replace(\"\\s+\", \"\")\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the power of a number.",
+        "solution": "fun power(base: Double, exponent: Int): Double {\n    return Math.pow(base, exponent.toDouble())\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is a valid email address.",
+        "solution": "fun isValidEmail(email: String): Boolean {\n    return email.contains(\"@\") && email.contains(\".\")\n}"
+    },
+    {
+        "prompt": "Write a function to find the average of an array of numbers.",
+        "solution": "fun average(arr: IntArray): Double {\n    return arr.average()\n}"
+    },
+    {
+        "prompt": "Write a function to merge two arrays.",
+        "solution": "fun mergeArrays(arr1: IntArray, arr2: IntArray): IntArray {\n    return arr1 + arr2\n}"
+    },
+    {
+        "prompt": "Write a function to remove duplicates from an array.",
+        "solution": "fun removeDuplicates(arr: IntArray): IntArray {\n    return arr.distinct().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to find the intersection of two arrays.",
+        "solution": "fun intersect(arr1: IntArray, arr2: IntArray): IntArray {\n    return arr1.intersect(arr2.toSet()).toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to find the union of two arrays.",
+        "solution": "fun union(arr1: IntArray, arr2: IntArray): IntArray {\n    return (arr1 + arr2).distinct().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to sort an array in ascending order.",
+        "solution": "fun sortArray(arr: IntArray): IntArray {\n    return arr.sortedArray()\n}"
+    },
+    {
+        "prompt": "Write a function to find the first non-repeating character in a string.",
+        "solution": "fun firstNonRepeatingCharacter(input: String): Char? {\n    return input.groupingBy { it }.eachCount().entries.firstOrNull { it.value == 1 }?.key\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the area of a circle given its radius.",
+        "solution": "fun areaOfCircle(radius: Double): Double {\n    return Math.PI * radius * radius\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the perimeter of a rectangle.",
+        "solution": "fun perimeterOfRectangle(length: Double, width: Double): Double {\n    return 2 * (length + width)\n}"
+    },
+    {
+        "prompt": "Write a function to convert a string to uppercase.",
+        "solution": "fun toUpperCase(input: String): String {\n    return input.uppercase()\n}"
+    },
+    {
+        "prompt": "Write a function to convert a string to lowercase.",
+        "solution": "fun toLowerCase(input: String): String {\n    return input.lowercase()\n}"
+    },
+    {
+        "prompt": "Write a function to replace all occurrences of a substring in a string.",
+        "solution": "fun replaceSubstring(input: String, target: String, replacement: String): String {\n    return input.replace(target, replacement)\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the distance between two points in a 2D plane.",
+        "solution": "fun distance(x1: Double, y1: Double, x2: Double, y2: Double): Double {\n    return Math.sqrt(Math.pow(x2 - x1, 2.0) + Math.pow(y2 - y1, 2.0))\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string starts with a given prefix.",
+        "solution": "fun startsWith(input: String, prefix: String): Boolean {\n    return input.startsWith(prefix)\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string ends with a given suffix.",
+        "solution": "fun endsWith(input: String, suffix: String): Boolean {\n    return input.endsWith(suffix)\n}"
+    },
+    {
+        "prompt": "Write a function to capitalize the first letter of each word in a string.",
+        "solution": "fun capitalizeWords(input: String): String {\n    return input.split(\" \").joinToString(\" \") { it.replaceFirstChar { char -> char.uppercase() } }\n}"
+    }
+]
