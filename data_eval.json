@@ -38,5 +38,85 @@
     {
         "prompt": "Write a function to find the common elements between two arrays.",
         "solution": "fun commonElements(arr1: IntArray, arr2: IntArray): IntArray {\n    return arr1.intersect(arr2.toSet()).toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is a palindrome.",
+        "solution": "fun isPalindrome(input: String): Boolean {\n    return input == input.reversed()\n}"
+    },
+    {
+        "prompt": "Write a function to convert a string to title case.",
+        "solution": "fun toTitleCase(input: String): String {\n    return input.split(\" \").joinToString(\" \") { it.replaceFirstChar { char -> char.uppercase() } }\n}"
+    },
+    {
+        "prompt": "Write a function to find the greatest common divisor (GCD) of two numbers.",
+        "solution": "fun gcd(a: Int, b: Int): Int {\n    return if (b == 0) a else gcd(b, a % b)\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is a prime number.",
+        "solution": "fun isPrime(n: Int): Boolean {\n    if (n <= 1) return false\n    for (i in 2..Math.sqrt(n.toDouble()).toInt()) {\n        if (n % i == 0) return false\n    }\n    return true\n}"
+    },
+    {
+        "prompt": "Write a function to capitalize the first letter of each word in a sentence.",
+        "solution": "fun capitalizeFirstLetters(sentence: String): String {\n    return sentence.split(\" \").joinToString(\" \") { it.replaceFirstChar { char -> char.uppercase() } }\n}"
+    },
+    {
+        "prompt": "Write a function to flatten a nested list.",
+        "solution": "fun <T> flattenList(nestedList: List<List<T>>): List<T> {\n    return nestedList.flatten()\n}"
+    },
+    {
+        "prompt": "Write a function to shuffle a list.",
+        "solution": "fun <T> shuffleList(list: List<T>): List<T> {\n    return list.shuffled()\n}"
+    },
+    {
+        "prompt": "Write a function to get the unique elements from a list.",
+        "solution": "fun <T> uniqueElements(list: List<T>): List<T> {\n    return list.distinct()\n}"
+    },
+    {
+        "prompt": "Write a function to find the intersection of two lists.",
+        "solution": "fun <T> intersection(list1: List<T>, list2: List<T>): List<T> {\n    return list1.intersect(list2).toList()\n}"
+    },
+    {
+        "prompt": "Write a function to count the number of vowels in a string.",
+        "solution": "fun countVowels(input: String): Int {\n    return input.count { it.lowercaseChar() in \"aeiou\" }\n}"
+    },
+    {
+        "prompt": "Write a function to convert a list of integers to their binary string representation.",
+        "solution": "fun intListToBinary(list: List<Int>): List<String> {\n    return list.map { Integer.toBinaryString(it) }\n}"
+    },
+    {
+        "prompt": "Write a function to check if a given year is a leap year.",
+        "solution": "fun isLeapYear(year: Int): Boolean {\n    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)\n}"
+    },
+    {
+        "prompt": "Write a function to find the second largest number in a list.",
+        "solution": "fun secondLargest(list: List<Int>): Int? {\n    return list.sortedDescending().distinct().drop(1).firstOrNull()\n}"
+    },
+    {
+        "prompt": "Write a function to generate a Fibonacci sequence up to n.",
+        "solution": "fun fibonacci(n: Int): List<Int> {\n    return generateSequence(Pair(0, 1)) { Pair(it.second, it.first + it.second) }\n        .take(n)\n        .map { it.first }\n}\n"
+    },
+    {
+        "prompt": "Write a function to rotate a list by n positions.",
+        "solution": "fun <T> rotateList(list: List<T>, n: Int): List<T> {\n    val shift = n % list.size\n    return list.drop(shift) + list.take(shift)\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the average of a list of numbers.",
+        "solution": "fun average(list: List<Double>): Double {\n    return list.average()\n}"
+    },
+    {
+        "prompt": "Write a function to convert a hexadecimal string to an integer.",
+        "solution": "fun hexToInt(hex: String): Int {\n    return hex.toInt(16)\n}"
+    },
+    {
+        "prompt": "Write a function to get the length of the longest word in a sentence.",
+        "solution": "fun lengthOfLongestWord(sentence: String): Int {\n    return sentence.split(\" \").maxOfOrNull { it.length } ?: 0\n}"
+    },
+    {
+        "prompt": "Write a function to remove duplicates from a string.",
+        "solution": "fun removeDuplicates(input: String): String {\n    return input.toCharArray().distinct().joinToString(\"\")\n}"
+    },
+    {
+        "prompt": "Write a function to find the sum of all even numbers in a list.",
+        "solution": "fun sumOfEvenNumbers(list: List<Int>): Int {\n    return list.filter { it % 2 == 0 }.sum()\n}"
     }
 ]

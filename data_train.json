@@ -158,5 +158,445 @@
     {
         "prompt": "Write a function to capitalize the first letter of each word in a string.",
         "solution": "fun capitalizeWords(input: String): String {\n    return input.split(\" \").joinToString(\" \") { it.replaceFirstChar { char -> char.uppercase() } }\n}"
+    },
+    {
+        "prompt": "Write a function to find the longest word in a string.",
+        "solution": "fun longestWord(input: String): String {\n    return input.split(\" \").maxByOrNull { it.length } ?: \"\"\n}"
+    },
+    {
+        "prompt": "Write a function to find the shortest word in a string.",
+        "solution": "fun shortestWord(input: String): String {\n    return input.split(\" \").minByOrNull { it.length } ?: \"\"\n}"
+    },
+    {
+        "prompt": "Write a function to count the number of consonants in a string.",
+        "solution": "fun countConsonants(input: String): Int {\n    return input.count { it.isLetter() && it !in \"aeiouAEIOU\" }\n}"
+    },
+    {
+        "prompt": "Write a function to find the unique elements in an array.",
+        "solution": "fun uniqueElements(arr: IntArray): IntArray {\n    return arr.distinct().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to shuffle an array.",
+        "solution": "fun shuffleArray(arr: IntArray): IntArray {\n    return arr.toList().shuffled().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to find the most frequently occurring element in an array.",
+        "solution": "fun mostFrequentElement(arr: IntArray): Int? {\n    return arr.groupingBy { it }.eachCount().maxByOrNull { it.value }?.key\n}"
+    },
+    {
+        "prompt": "Write a function to convert an integer to a binary string.",
+        "solution": "fun intToBinaryString(n: Int): String {\n    return Integer.toBinaryString(n)\n}"
+    },
+    {
+        "prompt": "Write a function to convert a binary string to an integer.",
+        "solution": "fun binaryStringToInt(binary: String): Int {\n    return Integer.parseInt(binary, 2)\n}"
+    },
+    {
+        "prompt": "Write a function to remove all vowels from a string.",
+        "solution": "fun removeVowels(input: String): String {\n    return input.filter { it !in \"aeiouAEIOU\" }\n}"
+    },
+    {
+        "prompt": "Write a function to find the common elements between two arrays.",
+        "solution": "fun commonElements(arr1: IntArray, arr2: IntArray): IntArray {\n    return arr1.intersect(arr2.toSet()).toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is empty.",
+        "solution": "fun isEmpty(input: String): Boolean {\n    return input.isEmpty()\n}"
+    },
+    {
+        "prompt": "Write a function to return the last character of a string.",
+        "solution": "fun lastCharacter(input: String): Char? {\n    return input.lastOrNull()\n}"
+    },
+    {
+        "prompt": "Write a function to split a string into an array by a delimiter.",
+        "solution": "fun splitString(input: String, delimiter: String): List<String> {\n    return input.split(delimiter)\n}"
+    },
+    {
+        "prompt": "Write a function to concatenate two strings.",
+        "solution": "fun concatenateStrings(str1: String, str2: String): String {\n    return str1 + str2\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the length of an array.",
+        "solution": "fun lengthOfArray(arr: IntArray): Int {\n    return arr.size\n}"
+    },
+    {
+        "prompt": "Write a function to create a copy of an array.",
+        "solution": "fun copyArray(arr: IntArray): IntArray {\n    return arr.copyOf()\n}"
+    },
+    {
+        "prompt": "Write a function to find the index of a given element in an array.",
+        "solution": "fun indexOfElement(arr: IntArray, element: Int): Int {\n    return arr.indexOf(element)\n}"
+    },
+    {
+        "prompt": "Write a function to remove an element from an array at a specified index.",
+        "solution": "fun removeAtIndex(arr: IntArray, index: Int): IntArray {\n    return arr.filterIndexed { i, _ -> i != index }.toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to get a substring from a string.",
+        "solution": "fun substring(input: String, start: Int, end: Int): String {\n    return input.substring(start, end)\n}"
+    },
+    {
+        "prompt": "Write a function to convert a string to a character array.",
+        "solution": "fun stringToCharArray(input: String): CharArray {\n    return input.toCharArray()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is a perfect square.",
+        "solution": "fun isPerfectSquare(n: Int): Boolean {\n    val sqrt = Math.sqrt(n.toDouble()).toInt()\n    return sqrt * sqrt == n\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string contains a specific substring.",
+        "solution": "fun containsSubstring(input: String, substring: String): Boolean {\n    return input.contains(substring)\n}"
+    },
+    {
+        "prompt": "Write a function to convert a string to an integer.",
+        "solution": "fun stringToInt(input: String): Int {\n    return input.toInt()\n}"
+    },
+    {
+        "prompt": "Write a function to convert an integer to a string.",
+        "solution": "fun intToString(n: Int): String {\n    return n.toString()\n}"
+    },
+    {
+        "prompt": "Write a function to find the maximum value in a list of integers.",
+        "solution": "fun maxInList(list: List<Int>): Int {\n    return list.maxOrNull() ?: throw IllegalArgumentException(\"List is empty\")\n}"
+    },
+    {
+        "prompt": "Write a function to find the minimum value in a list of integers.",
+        "solution": "fun minInList(list: List<Int>): Int {\n    return list.minOrNull() ?: throw IllegalArgumentException(\"List is empty\")\n}"
+    },
+    {
+        "prompt": "Write a function to reverse a list of integers.",
+        "solution": "fun reverseList(list: List<Int>): List<Int> {\n    return list.reversed()\n}"
+    },
+    {
+        "prompt": "Write a function to convert a list of strings to uppercase.",
+        "solution": "fun toUpperCaseList(list: List<String>): List<String> {\n    return list.map { it.uppercase() }\n}"
+    },
+    {
+        "prompt": "Write a function to convert a list of strings to lowercase.",
+        "solution": "fun toLowerCaseList(list: List<String>): List<String> {\n    return list.map { it.lowercase() }\n}"
+    },
+    {
+        "prompt": "Write a function to find the first occurrence of a substring in a string.",
+        "solution": "fun firstOccurrence(input: String, substring: String): Int {\n    return input.indexOf(substring)\n}"
+    },
+    {
+        "prompt": "Write a function to trim whitespace from a string.",
+        "solution": "fun trimWhitespace(input: String): String {\n    return input.trim()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is a power of two.",
+        "solution": "fun isPowerOfTwo(n: Int): Boolean {\n    return (n > 0) && (n and (n - 1)) == 0\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the sum of an array of doubles.",
+        "solution": "fun sumOfDoubleArray(arr: DoubleArray): Double {\n    return arr.sum()\n}"
+    },
+    {
+        "prompt": "Write a function to find the median of a list of integers.",
+        "solution": "fun median(list: List<Int>): Double {\n    val sorted = list.sorted()\n    return if (sorted.size % 2 == 0) {\n        (sorted[sorted.size / 2 - 1] + sorted[sorted.size / 2]) / 2.0\n    } else {\n        sorted[sorted.size / 2].toDouble()\n    }\n}"
+    },
+    {
+        "prompt": "Write a function to find the mode of a list of integers.",
+        "solution": "fun mode(list: List<Int>): Int? {\n    return list.groupingBy { it }.eachCount().maxByOrNull { it.value }?.key\n}"
+    },
+    {
+        "prompt": "Write a function to create a range of integers.",
+        "solution": "fun createRange(start: Int, end: Int): IntArray {\n    return (start..end).toList().toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to find the square root of a number.",
+        "solution": "fun squareRoot(n: Double): Double {\n    return Math.sqrt(n)\n}"
+    },
+    {
+        "prompt": "Write a function to round a number to the nearest integer.",
+        "solution": "fun roundToNearest(n: Double): Int {\n    return n.roundToInt()\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the factorial of a number iteratively.",
+        "solution": "fun iterativeFactorial(n: Int): Int {\n    var result = 1\n    for (i in 2..n) {\n        result *= i\n    }\n    return result\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is a valid URL.",
+        "solution": "fun isValidURL(url: String): Boolean {\n    return url.startsWith(\"http://\") || url.startsWith(\"https://\")\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the body mass index (BMI).",
+        "solution": "fun calculateBMI(weight: Double, height: Double): Double {\n    return weight / (height * height)\n}"
+    },
+    {
+        "prompt": "Write a function to generate a random integer between two numbers.",
+        "solution": "fun randomIntInRange(min: Int, max: Int): Int {\n    return (min..max).random()\n}"
+    },
+    {
+        "prompt": "Write a function to get the current timestamp.",
+        "solution": "fun currentTimestamp(): Long {\n    return System.currentTimeMillis()\n}"
+    },
+    {
+        "prompt": "Write a function to get the first N prime numbers.",
+        "solution": "fun firstNPrimes(n: Int): List<Int> {\n    val primes = mutableListOf<Int>()\n    var num = 2\n    while (primes.size < n) {\n        if (isPrime(num)) {\n            primes.add(num)\n        }\n        num++\n    }\n    return primes\n}"
+    },
+    {
+        "prompt": "Write a function to find the greatest common divisor (GCD) of an array of numbers.",
+        "solution": "fun gcdOfArray(arr: IntArray): Int {\n    return arr.reduce { acc, i -> gcd(acc, i) }\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the sum of digits of an integer.",
+        "solution": "fun sumOfDigits(n: Int): Int {\n    return n.toString().map { it.toString().toInt() }.sum()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string contains only alphabetic characters.",
+        "solution": "fun isAlphabetic(input: String): Boolean {\n    return input.all { it.isLetter() }\n}"
+    },
+    {
+        "prompt": "Write a function to reverse a string.",
+        "solution": "fun reverseString(input: String): String {\n    return input.reversed()\n}"
+    },
+    {
+        "prompt": "Write a function to find the first non-repeating character in a string.",
+        "solution": "fun firstNonRepeatingCharacter(input: String): Char? {\n    val frequency = input.groupingBy { it }.eachCount()\n    return input.firstOrNull { frequency[it] == 1 }\n}"
+    },
+    {
+        "prompt": "Write a function to count the occurrences of a character in a string.",
+        "solution": "fun countCharacterOccurrences(input: String, char: Char): Int {\n    return input.count { it == char }\n}"
+    },
+    {
+        "prompt": "Write a function to convert a list of integers to a string.",
+        "solution": "fun intListToString(list: List<Int>): String {\n    return list.joinToString(\", \")\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the power of a number.",
+        "solution": "fun power(base: Double, exponent: Int): Double {\n    return Math.pow(base, exponent.toDouble())\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is prime.",
+        "solution": "fun isPrime(n: Int): Boolean {\n    if (n < 2) return false\n    for (i in 2..Math.sqrt(n.toDouble()).toInt()) {\n        if (n % i == 0) return false\n    }\n    return true\n}"
+    },
+    {
+        "prompt": "Write a function to flatten a nested list.",
+        "solution": "fun flattenList(nestedList: List<List<Int>>): List<Int> {\n    return nestedList.flatten()\n}"
+    },
+    {
+        "prompt": "Write a function to generate Fibonacci series up to N terms.",
+        "solution": "fun fibonacciSeries(n: Int): List<Int> {\n    val fib = mutableListOf(0, 1)\n    for (i in 2 until n) {\n        fib.add(fib[i - 1] + fib[i - 2])\n    }\n    return fib.take(n)\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the average of a list of integers.",
+        "solution": "fun average(list: List<Int>): Double {\n    return list.average()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is a palindrome.",
+        "solution": "fun isPalindrome(input: String): Boolean {\n    return input == input.reversed()\n}"
+    },
+    {
+        "prompt": "Write a function to convert a string to a list of words.",
+        "solution": "fun stringToWordList(input: String): List<String> {\n    return input.split(\\s+) // Splits by whitespace\n}"
+    },
+    {
+        "prompt": "Write a function to find the intersection of two arrays.",
+        "solution": "fun intersection(arr1: IntArray, arr2: IntArray): IntArray {\n    return arr1.intersect(arr2.toSet()).toIntArray()\n}"
+    },
+    {
+        "prompt": "Write a function to merge two sorted arrays.",
+        "solution": "fun mergeSortedArrays(arr1: IntArray, arr2: IntArray): IntArray {\n    return (arr1 + arr2).sortedArray()\n}"
+    },
+    {
+        "prompt": "Write a function to count the vowels in a string.",
+        "solution": "fun countVowels(input: String): Int {\n    return input.count { it.lowercaseChar() in listOf('a', 'e', 'i', 'o', 'u') }\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string starts with a specific prefix.",
+        "solution": "fun startsWith(input: String, prefix: String): Boolean {\n    return input.startsWith(prefix)\n}"
+    },
+    {
+        "prompt": "Write a function to replace all occurrences of a substring in a string.",
+        "solution": "fun replaceSubstring(input: String, oldSubstring: String, newSubstring: String): String {\n    return input.replace(oldSubstring, newSubstring)\n}"
+    },
+    {
+        "prompt": "Write a function to find the longest word in a string.",
+        "solution": "fun longestWord(input: String): String? {\n    return input.split(\\s+).maxByOrNull { it.length }\n}"
+    },
+    {
+        "prompt": "Write a function to remove duplicates from a list.",
+        "solution": "fun removeDuplicates(list: List<Int>): List<Int> {\n    return list.distinct()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a year is a leap year.",
+        "solution": "fun isLeapYear(year: Int): Boolean {\n    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)\n}"
+    },
+    {
+        "prompt": "Write a function to find the common elements in two lists.",
+        "solution": "fun commonElements(list1: List<Int>, list2: List<Int>): List<Int> {\n    return list1.intersect(list2).toList()\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the area of a circle.",
+        "solution": "fun areaOfCircle(radius: Double): Double {\n    return Math.PI * radius * radius\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string ends with a specific suffix.",
+        "solution": "fun endsWith(input: String, suffix: String): Boolean {\n    return input.endsWith(suffix)\n}"
+    },
+    {
+        "prompt": "Write a function to count the number of words in a string.",
+        "solution": "fun countWords(input: String): Int {\n    return input.split(\\s+).size\n}"
+    },
+    {
+        "prompt": "Write a function to create a range of characters.",
+        "solution": "fun createCharRange(start: Char, end: Char): List<Char> {\n    return (start..end).toList()\n}"
+    },
+    {
+        "prompt": "Write a function to get the unique characters from a string.",
+        "solution": "fun uniqueCharacters(input: String): List<Char> {\n    return input.toSet().toList()\n}"
+    },
+    {
+        "prompt": "Write a function to convert a list of integers to their binary representations.",
+        "solution": "fun intListToBinary(list: List<Int>): List<String> {\n    return list.map { Integer.toBinaryString(it) }\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string contains only digits.",
+        "solution": "fun isNumeric(input: String): Boolean {\n    return input.all { it.isDigit() }\n}"
+    },
+    {
+        "prompt": "Write a function to find the sum of an array of floats.",
+        "solution": "fun sumOfFloatArray(arr: FloatArray): Float {\n    return arr.sum()\n}"
+    },
+    {
+        "prompt": "Write a function to remove whitespace from a string.",
+        "solution": "fun removeWhitespace(input: String): String {\n    return input.replace(\" \", \"\")\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the distance between two points in 2D.",
+        "solution": "fun distanceBetweenPoints(x1: Double, y1: Double, x2: Double, y2: Double): Double {\n    return Math.sqrt(Math.pow(x2 - x1, 2.0) + Math.pow(y2 - y1, 2.0))\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the circumference of a circle.",
+        "solution": "fun circumferenceOfCircle(radius: Double): Double {\n    return 2 * Math.PI * radius\n}"
+    },
+    {
+        "prompt": "Write a function to check if two strings are anagrams.",
+        "solution": "fun areAnagrams(str1: String, str2: String): Boolean {\n    return str1.toList().sorted() == str2.toList().sorted()\n}"
+    },
+    {
+        "prompt": "Write a function to find the second largest number in an array.",
+        "solution": "fun secondLargest(arr: IntArray): Int? {\n    return arr.distinct().sortedDescending().elementAtOrNull(1)\n}"
+    },
+    {
+        "prompt": "Write a function to find all the divisors of a number.",
+        "solution": "fun divisors(n: Int): List<Int> {\n    return (1..n).filter { n % it == 0 }\n}"
+    },
+    {
+        "prompt": "Write a function to find the product of all elements in an array.",
+        "solution": "fun productOfArray(arr: IntArray): Int {\n    return arr.fold(1) { acc, i -> acc * i }\n}"
+    },
+    {
+        "prompt": "Write a function to find the length of the longest substring without repeating characters.",
+        "solution": "fun lengthOfLongestSubstring(s: String): Int {\n    val charIndexMap = mutableMapOf<Char, Int>()\n    var maxLength = 0\n    var start = 0\n\n    for (i in s.indices) {\n        if (charIndexMap.containsKey(s[i])) {\n            start = Math.max(start, charIndexMap[s[i]]!! + 1)\n        }\n        charIndexMap[s[i]] = i\n        maxLength = Math.max(maxLength, i - start + 1)\n    }\n\n    return maxLength\n}"
+    },
+    {
+        "prompt": "Write a function to find the factorial of a number.",
+        "solution": "fun factorial(n: Int): Int {\n    return if (n <= 1) 1 else n * factorial(n - 1)\n}"
+    },
+    {
+        "prompt": "Write a function to generate random integers within a given range.",
+        "solution": "fun randomIntInRange(min: Int, max: Int): Int {\n    return (min..max).random()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is even.",
+        "solution": "fun isEven(n: Int): Boolean {\n    return n % 2 == 0\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is empty.",
+        "solution": "fun isStringEmpty(input: String): Boolean {\n    return input.isEmpty()\n}"
+    },
+    {
+        "prompt": "Write a function to reverse the words in a sentence.",
+        "solution": "fun reverseWords(sentence: String): String {\n    return sentence.split(\\s+).reversed().joinToString(\" \")\n}"
+    },
+    {
+        "prompt": "Write a function to get the current date and time.",
+        "solution": "fun currentDateTime(): String {\n    return java.time.LocalDateTime.now().toString()\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is a perfect square.",
+        "solution": "fun isPerfectSquare(n: Int): Boolean {\n    val sqrt = Math.sqrt(n.toDouble()).toInt()\n    return sqrt * sqrt == n\n}"
+    },
+    {
+        "prompt": "Write a function to find the maximum number in an array.",
+        "solution": "fun maxInArray(arr: IntArray): Int? {\n    return arr.maxOrNull()\n}"
+    },
+    {
+        "prompt": "Write a function to find the minimum number in an array.",
+        "solution": "fun minInArray(arr: IntArray): Int? {\n    return arr.minOrNull()\n}"
+    },
+    {
+        "prompt": "Write a function to sum all elements in a list.",
+        "solution": "fun sumOfList(list: List<Int>): Int {\n    return list.sum()\n}"
+    },
+    {
+        "prompt": "Write a function to create a list of squares of numbers from 1 to N.",
+        "solution": "fun squaresList(n: Int): List<Int> {\n    return (1..n).map { it * it }\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string contains another substring.",
+        "solution": "fun containsSubstring(input: String, substring: String): Boolean {\n    return input.contains(substring)\n}"
+    },
+    {
+        "prompt": "Write a function to get the last element of a list.",
+        "solution": "fun lastElement(list: List<Int>): Int? {\n    return list.lastOrNull()\n}"
+    },
+    {
+        "prompt": "Write a function to find the index of an element in a list.",
+        "solution": "fun indexOfElement(list: List<Int>, element: Int): Int? {\n    return list.indexOf(element)\n}"
+    },
+    {
+        "prompt": "Write a function to remove a specific element from a list.",
+        "solution": "fun removeElement(list: MutableList<Int>, element: Int): Boolean {\n    return list.remove(element)\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is a valid email.",
+        "solution": "fun isValidEmail(email: String): Boolean {\n    return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()\n}"
+    },
+    {
+        "prompt": "Write a function to format a number to two decimal places.",
+        "solution": "fun formatToTwoDecimalPlaces(number: Double): String {\n    return String.format(\"%.2f\", number)\n}"
+    },
+    {
+        "prompt": "Write a function to find the mode of a list of numbers.",
+        "solution": "fun mode(list: List<Int>): List<Int> {\n    val frequency = list.groupingBy { it }.eachCount()\n    val maxCount = frequency.values.maxOrNull() ?: return emptyList()\n    return frequency.filter { it.value == maxCount }.keys.toList()\n}"
+    },
+    {
+        "prompt": "Write a function to get the first n prime numbers.",
+        "solution": "fun firstNPrimes(n: Int): List<Int> {\n    val primes = mutableListOf<Int>()\n    var num = 2\n    while (primes.size < n) {\n        if (isPrime(num)) primes.add(num)\n        num++\n    }\n    return primes\n}"
+    },
+    {
+        "prompt": "Write a function to convert a temperature from Celsius to Fahrenheit.",
+        "solution": "fun celsiusToFahrenheit(celsius: Double): Double {\n    return celsius * 9 / 5 + 32\n}"
+    },
+    {
+        "prompt": "Write a function to convert a temperature from Fahrenheit to Celsius.",
+        "solution": "fun fahrenheitToCelsius(fahrenheit: Double): Double {\n    return (fahrenheit - 32) * 5 / 9\n}"
+    },
+    {
+        "prompt": "Write a function to check if a string is a valid URL.",
+        "solution": "fun isValidURL(url: String): Boolean {\n    return android.util.Patterns.WEB_URL.matcher(url).matches()\n}"
+    },
+    {
+        "prompt": "Write a function to calculate the sum of digits of a number.",
+        "solution": "fun sumOfDigits(n: Int): Int {\n    return n.toString().sumOf { it.toString().toInt() }\n}"
+    },
+    {
+        "prompt": "Write a function to count the number of even and odd numbers in a list.",
+        "solution": "fun countEvenOdd(list: List<Int>): Pair<Int, Int> {\n    val evenCount = list.count { it % 2 == 0 }\n    val oddCount = list.size - evenCount\n    return Pair(evenCount, oddCount)\n}"
+    },
+    {
+        "prompt": "Write a function to check if a number is a power of two.",
+        "solution": "fun isPowerOfTwo(n: Int): Boolean {\n    return n > 0 && (n and (n - 1)) == 0\n}"
+    },
+    {
+        "prompt": "Write a function to merge two maps.",
+        "solution": "fun mergeMaps(map1: Map<String, Int>, map2: Map<String, Int>): Map<String, Int> {\n    return map1 + map2\n}"
+    },
+    {
+        "prompt": "Write a function to convert a list of strings to uppercase.",
+        "solution": "fun convertToUppercase(list: List<String>): List<String> {\n    return list.map { it.uppercase() }\n}"
     }
 ]
