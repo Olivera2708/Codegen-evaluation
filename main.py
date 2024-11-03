@@ -43,10 +43,10 @@ def evaluate_fine_tuned():
 
 
 if __name__ == "__main__":
-    # print("--- ORIGINAL MODEL ---")
-    # evaluate_original()
+    print("--- ORIGINAL MODEL ---")
+    evaluate_original()
 
     train_fine_tuned_model()
 
-    # print("--- FINE-TUNED MODEL ---")
-    # evaluate_fine_tuned()
+    print("--- FINE-TUNED MODEL ---")
+    evaluate_fine_tuned()
