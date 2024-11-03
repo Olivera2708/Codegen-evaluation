@@ -5,7 +5,7 @@ from evaluation import evaluate_model_on_kotlin_humaneval
 from train import train_model
 
 
-dataset = load_dataset("JetBrains/Kotlin_HumanEval")["train"]
+dataset = load_dataset("JetBrains/Kotlin_HumanEval")["train"].select(range(1))
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def train_fine_tuned_model():
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     # print("--- ORIGINAL MODEL ---")
     # evaluate_original()
 
-    # train_fine_tuned_model()
+    train_fine_tuned_model()
 
-    print("--- FINE-TUNED MODEL ---")
-    evaluate_fine_tuned()
+    # print("--- FINE-TUNED MODEL ---")
+    # evaluate_fine_tuned()
